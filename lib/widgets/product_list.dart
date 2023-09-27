@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopapp/global_variables.dart';
-import 'package:shopapp/product_card.dart';
-import 'package:shopapp/product_details_page.dart';
+import 'package:shopapp/widgets/product_card.dart';
+import 'package:shopapp/pages/product_details_page.dart';
 
 class ProductList extends StatefulWidget {
   const ProductList({super.key});
@@ -12,7 +12,14 @@ class ProductList extends StatefulWidget {
 
 class _ProductListState extends State<ProductList> {
   final List<String> filters = const ['All', 'Addidas', 'Nike', 'Bata'];
+
   late String selectedFilter;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedFilter = filters[0];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +47,12 @@ class _ProductListState extends State<ProductList> {
               const Expanded(
                 child: TextField(
                   decoration: InputDecoration(
-                      hintText: 'Search',
-                      prefixIcon: Icon(Icons.search),
-                      border: border,
-                      enabledBorder: border,
-                      focusedBorder: border),
+                    hintText: 'Search',
+                    prefixIcon: Icon(Icons.search),
+                    border: border,
+                    enabledBorder: border,
+                    focusedBorder: border,
+                  ),
                 ),
               ),
             ],
@@ -72,9 +80,13 @@ class _ProductListState extends State<ProductList> {
                         color: Color.fromRGBO(245, 247, 249, 1),
                       ),
                       label: Text(filter),
-                      labelStyle: const TextStyle(fontSize: 16),
+                      labelStyle: const TextStyle(
+                        fontSize: 16,
+                      ),
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 15),
+                        horizontal: 20,
+                        vertical: 15,
+                      ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),

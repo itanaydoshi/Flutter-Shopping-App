@@ -19,8 +19,9 @@ class ProductCard extends StatelessWidget {
       margin: const EdgeInsets.all(20),
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: BorderRadius.circular(20)),
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(20),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -35,10 +36,7 @@ class ProductCard extends StatelessWidget {
           ),
           const SizedBox(height: 5),
           Center(
-            child: Image.asset(
-              image,
-              height: 175,
-            ),
+            child: Image.asset(image, height: 175),
           ),
         ],
       ),
