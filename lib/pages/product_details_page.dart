@@ -25,18 +25,18 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
           'price': widget.product['price'],
           'imageUrl': widget.product['imageUrl'],
           'company': widget.product['company'],
-          'sizes': selectedSize,
+          'size': selectedSize,
         },
       );
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Product added Successfully!'),
+          content: Text('Product added successfully!'),
         ),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Please Select a Size!'),
+          content: Text('Please select a size!'),
         ),
       );
     }
@@ -65,12 +65,12 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
           const Spacer(flex: 2),
           Container(
             height: 250,
-            width: double.infinity,
             decoration: BoxDecoration(
               color: const Color.fromRGBO(245, 247, 249, 1),
               borderRadius: BorderRadius.circular(40),
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   '\$${widget.product['price']}',
@@ -111,7 +111,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     onPressed: onTap,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context).colorScheme.primary,
-                      minimumSize: const Size(350, 50),
+                      fixedSize: const Size(350, 50),
                     ),
                     child: const Text(
                       'Add To Cart',
